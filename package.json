@@ -1,0 +1,34 @@
+{
+  "name": "paytrack-backend",
+  "version": "1.0.0",
+  "description": "nodeJS backend for payment tracking app using express mongoose and redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LightningItself/paytrack-backend.git"
+  },
+  "keywords": [
+    "backend"
+  ],
+  "author": "Indrayudh Ghosh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LightningItself/paytrack-backend/issues"
+  },
+  "homepage": "https://github.com/LightningItself/paytrack-backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
