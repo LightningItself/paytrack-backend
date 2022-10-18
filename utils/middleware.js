@@ -31,8 +31,8 @@ const errorHandler = (err, req, res, next) => {
 };
 
 const userExtractor = async (req, res, next) => {
-  const auth = req.get("authorization");
-  if (!(auth && auth.toLowerCase().startsWith("Bearer "))) {
+  const auth = req.get("Authorization");
+  if (!(auth && auth.toLowerCase().startsWith("bearer "))) {
     return res.status(401).json({ error: "token missing or invalid" });
   }
   const token = auth.substring(7);
