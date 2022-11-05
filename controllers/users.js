@@ -4,21 +4,13 @@ const User = require("../models/user");
 const config = require("../utils/config");
 
 usersRouter.get("/", async (req, res, next) => {
-  const users = await User.find({}).populate("clients", {
-    name: 1,
-    amount: 1,
-    id: 1,
-  });
+  const users = await User.find({}).populate("tabs");
   res.json(users);
 });
 
 usersRouter.get("/:id", async (req, res, next) => {
   const id = req.params.id;
-  const user = await User.findById(id).populate("clients", {
-    name: 1,
-    amount: 1,
-    id: 1,
-  });
+  const user = await User.findById(id);
   if (!user) {
     res.status(400).json({ error: "user not found" });
   }
@@ -33,7 +25,10 @@ usersRouter.post("/", async (req, res, next) => {
     username: username,
     name: name,
     passwordHash: passwordHash,
-    clients: [],
+    tabs: [],
+    completedTransactions: [],
+    pendingTransactions: [],
+    unverifiedTransactions: [],
   });
 
   try {

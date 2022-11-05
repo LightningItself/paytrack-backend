@@ -4,7 +4,10 @@ const userSchema = new mongoose.Schema({
   username: String,
   name: String,
   passwordHash: String,
-  clients: [{ type: mongoose.Schema.Types.ObjectId, ref: "Client" }],
+  tabs: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tab" }],
+  completedTransactions: [],
+  pendingTransactions: [],
+  unverifiedTransactions: [],
 });
 
 userSchema.set("toJSON", {
