@@ -26,7 +26,7 @@ tabsRouter.post("/", async (req, res) => {
     unverifiedTransactions: [],
   });
   await tab.save();
-  self.tabs = self.tabs.concat(tab._id);
+  self.tabs = sself.tabs.concat(tab._id);
   user.tabs = user.tabs.concat(tab._id);
   await self.save();
   await user.save();
